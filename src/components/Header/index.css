@@ -1,0 +1,30 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131313;
+  opacity: 65%;
+  padding: 30px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.website-logo {
+  height: 30px;
+}
+.nav-link {
+  color: #ffffff;
+  margin-left: 40px;
+}
+.nav-menu-container {
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  color: #ffffff;
+  font-size: 28px;
+  margin-right: 40px;
+}
+.nav-profile-container {
+  display: flex;
+  align-items: center;
+}
