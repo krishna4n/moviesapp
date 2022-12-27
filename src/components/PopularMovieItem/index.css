@@ -1,0 +1,14 @@
+.popular-item-container {
+  margin: 10px;
+}
+
+.popular-item-image {
+  width: 75px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 687px) {
+  .popular-item-image {
+    min-width: 110px;
+  }
+}

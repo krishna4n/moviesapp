@@ -6,27 +6,26 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import './index.css'
 
-const Trending = props => {
-  const {trending} = props
+const Originals = props => {
+  const {originals} = props
   const settings = {
     dots: false,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 4,
   }
-  console.log(trending)
   return (
     <>
-      <h1 className="trending-header">Trending Now</h1>
+      <h1 className="originals-header">Originals</h1>
       <div className="slider-container">
         <Slider {...settings}>
-          {trending.map(each => (
+          {originals.map(each => (
             <div className="slider-item-container">
               <Link to={`/movies/${each.id}`}>
                 <img
                   src={each.backDropPath}
                   alt={each.title}
-                  className="trending-image"
+                  className="originals-image"
                 />
               </Link>
             </div>
@@ -37,4 +36,4 @@ const Trending = props => {
   )
 }
 
-export default Trending
+export default Originals

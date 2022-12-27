@@ -1,0 +1,12 @@
+.popular-container {
+  background-color: #181818;
+}
+.popular-list-container {
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 12%;
+  padding-right: 12%;
+}

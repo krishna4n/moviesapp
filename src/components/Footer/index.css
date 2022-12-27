@@ -1,5 +1,4 @@
 .footer-container {
-  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,5 +14,6 @@
 }
 
 .footer-text {
+  font-size: 18px;
   color: #ffffff;
 }

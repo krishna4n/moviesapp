@@ -1,4 +1,33 @@
 .home-poster-container {
-  height: 55vh;
+  height: 52vh;
+  background-repeat: no-repeat;
   background-size: cover;
+}
+.home-container {
+  background-image: linear-gradient(to bottom, #181818, #000000);
+  height: 100vh;
+}
+
+.loader-container {
+  height: 10vw;
+  text-align: center;
+  background-color: #000000;
+}
+
+.trending-now-container {
+  padding-left: 12%;
+  padding-right: 12%;
+  background-color: #000000;
+}
+.originals-container {
+  padding-left: 12%;
+  padding-right: 12%;
+  background-color: #000000;
+}
+.failed-view-button {
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
 }

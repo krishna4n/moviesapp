@@ -1,4 +1,4 @@
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 import {HiOutlineSearch} from 'react-icons/hi'
 import './index.css'
 
@@ -10,8 +10,14 @@ const Header = () => (
         alt="website logo"
         className="website-logo"
       />
-      <div className="nav-link">Home</div>
-      <div className="nav-link">Popular</div>
+
+      <Link to="/">
+        <div className="nav-link">Home</div>
+      </Link>
+
+      <Link to="/popular">
+        <div className="nav-link">Popular</div>
+      </Link>
     </div>
     <div className="nav-profile-container">
       <HiOutlineSearch className="search-icon" />

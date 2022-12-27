@@ -1,0 +1,28 @@
+.home-poster-details-container {
+  height: 100%;
+  padding-left: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'HK Grotesk';
+  color: #ffffff;
+}
+
+.home-poster-title {
+  font-style: solid;
+}
+
+.home-poster-overview {
+}
+
+.home-poster-button {
+  justify-self: flex-start;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  outline: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
