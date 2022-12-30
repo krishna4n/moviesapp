@@ -58,9 +58,9 @@ class Popular extends Component {
     <div className="failed-view-container">
       <img
         src="https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672047384/MoviesApp/Pathalertimage_qtub0k.png"
-        alt="alert"
+        alt="failure view"
       />
-      <p>Something went wrong. Please try agin</p>
+      <p>Something went wrong. Please try again</p>
       <button
         type="button"
         className="failed-view-button"

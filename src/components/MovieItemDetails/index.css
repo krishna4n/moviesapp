@@ -1,14 +1,21 @@
+.movie-item-details-container {
+  background-color: #181818;
+}
+
 .movie-poster-container {
-  height: 55vh;
+  height: 52vh;
+  height: 150%;
 
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
 }
 .movie-details-container {
+  padding-top: 10%;
   padding-left: 12%;
   padding-right: 12%;
 }
+
 .ua-container {
   padding: 2px;
   border: 1px solid #ffffff;
@@ -16,6 +23,7 @@
   margin-right: 10px;
   font-size: 10px;
 }
+
 .movie-details-row-container {
   display: flex;
   align-items: center;
@@ -30,4 +38,38 @@
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5px;
+}
+.details-container {
+  list-style-type: none;
+  background: #181818;
+  padding-left: 12%;
+  padding-right: 12%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.genres-list {
+  list-style-type: none;
+}
+.audio-available-list {
+  list-style-type: none;
+}
+
+.more-like-this-container {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.more-like-this-heading {
+  margin-top: -20px;
+}
+
+.more-like-this {
+  margin-top: -20px;
+  padding-left: 12%;
+  padding-right: 12%;
+  background-color: #181818;
 }

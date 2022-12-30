@@ -4,6 +4,7 @@ import Cookie from 'js-cookie'
 import Header from '../Header'
 import Footer from '../Footer'
 import './index.css'
+import SimilarMovies from '../SimilarMovies'
 
 class MovieItemDetails extends Component {
   state = {isAppLoaded: 'LOADING', movieDetails: undefined}
@@ -28,9 +29,9 @@ class MovieItemDetails extends Component {
     <div className="failed-view-container">
       <img
         src="https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672047384/MoviesApp/Pathalertimage_qtub0k.png"
-        alt="alert"
+        alt="failure view"
       />
-      <p>Something went wrong. Please try agin</p>
+      <p>Something went wrong. Please try again</p>
       <button
         type="button"
         className="failed-view-button"
@@ -90,19 +91,77 @@ class MovieItemDetails extends Component {
     const releasedOn = date.getFullYear()
     const hours = Math.floor(movieDetails.runtime / 60)
     const minutes = movieDetails.runtime % 60
+    const childRating = movieDetails.adult ? 'A' : 'U/A'
+    const similarMoviesList = movieDetails.similarMovies.map(each => ({
+      backdropPath: each.backdrop_path,
+      id: each.id,
+      overview: each.overview,
+      posterPath: each.poster_path,
+      title: each.title,
+    }))
+
+    const languages = movieDetails.spokenLanguages.map(each => ({
+      id: each.id,
+      spokenLanguage: each.english_name,
+    }))
+
     console.log(hours, minutes)
     return (
-      <div className="movie-details-container">
-        <h1>{movieDetails.title}</h1>
-        <div className="movie-details-row-container">
-          <p>{`${hours}h ${minutes}m`}</p>
-          <span className="ua-container">U/A</span>
-          <p>{releasedOn}</p>
+      <div className="movie-details">
+        <div className="movie-details-container">
+          <h1>{movieDetails.title}</h1>
+          <div className="movie-details-row-container">
+            <p>{`${hours}h ${minutes}m`}</p>
+            <p className="ua-container">{childRating}</p>
+            <p>{releasedOn}</p>
+          </div>
+          <p>{movieDetails.overview}</p>
+          <button type="button" className="movie-details-button">
+            Play
+          </button>
         </div>
-        <p>{movieDetails.overview}</p>
-        <button type="button" className="movie-details-button">
-          Play
-        </button>
+        <ul className="details-container">
+          <li className="genres-container">
+            <ul className="genres-list">
+              <h4>Genres</h4>
+              {movieDetails.genres.map(each => (
+                <li key={each.id}>
+                  <p>{each.name}</p>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="audio-available-container">
+            <ul className="audio-available-list">
+              <h4>Audio Available</h4>
+              {languages.map(each => (
+                <li key={each.id}>
+                  <p>{each.spokenLanguage}</p>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="rating-container">
+            <h4>Rating Count</h4>
+            <p>{movieDetails.voteAverage}</p>
+            <h4>Rating Average</h4>
+            <p>{movieDetails.voteCount}</p>
+          </li>
+          <li className="budget-container">
+            <h4>Budget</h4>
+            <p>{movieDetails.budget}</p>
+            <h4>Release Date</h4>
+            <p>{movieDetails.releaseDate}</p>
+          </li>
+        </ul>
+        <div className="more-like-this">
+          <h2 className="more-like-this-heading">More like this</h2>
+          <ul className="more-like-this-container">
+            {similarMoviesList.map(each => (
+              <SimilarMovies key={each.id} similarMovie={each} />
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }

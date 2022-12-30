@@ -108,9 +108,9 @@ class Home extends Component {
     <div className="failed-view-container">
       <img
         src="https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672047384/MoviesApp/Pathalertimage_qtub0k.png"
-        alt="alert"
+        alt="failure view"
       />
-      <p>Something went wrong. Please try agin</p>
+      <p>Something went wrong. Please try again</p>
       <button
         type="button"
         className="failed-view-button"
@@ -148,8 +148,8 @@ class Home extends Component {
   }
 
   renderingTrendingNowOptions = () => {
-    const {hasPosterDetails} = this.state
-    switch (hasPosterDetails) {
+    const {hasTendingList} = this.state
+    switch (hasTendingList) {
       case this.apiStatus.loading:
         return this.renderingLoadingView()
       case this.apiStatus.success:
@@ -162,8 +162,8 @@ class Home extends Component {
   }
 
   renderingOriginalsOptions = () => {
-    const {hasPosterDetails} = this.state
-    switch (hasPosterDetails) {
+    const {hasOriginalsList} = this.state
+    switch (hasOriginalsList) {
       case this.apiStatus.loading:
         return this.renderingLoadingView()
       case this.apiStatus.success:
@@ -185,7 +185,7 @@ class Home extends Component {
     console.log(hasOriginalsList, hasPosterDetails, hasTendingList)
     console.log(randomPosterDetails)
     const posterStyle =
-      randomPosterDetails !== undefined ? randomPosterDetails.backDropPath : ''
+      randomPosterDetails !== undefined ? randomPosterDetails.posterPath : ''
     console.log(posterStyle)
     return (
       <div className="home-container">

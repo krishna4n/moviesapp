@@ -14,17 +14,42 @@
 .nav-link {
   color: #ffffff;
   margin-left: 40px;
+  text-decoration: none;
 }
 .nav-menu-container {
   display: flex;
   align-items: center;
+  list-style-type: none;
 }
 .search-icon {
   color: #ffffff;
-  font-size: 28px;
-  margin-right: 40px;
+  font-size: 20px;
 }
 .nav-profile-container {
   display: flex;
   align-items: center;
+}
+.search-button {
+  background-color: transparent;
+  border: none;
+}
+
+.search-icon-container {
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.search-input {
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+}
+.no-display {
+  display: none;
+}
+.profile-icon {
+  margin-left: 40px;
 }

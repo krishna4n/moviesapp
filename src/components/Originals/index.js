@@ -23,7 +23,7 @@ const Originals = props => {
             <div className="slider-item-container">
               <Link to={`/movies/${each.id}`}>
                 <img
-                  src={each.backDropPath}
+                  src={each.posterPath}
                   alt={each.title}
                   className="originals-image"
                 />

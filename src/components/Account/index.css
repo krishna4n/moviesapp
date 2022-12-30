@@ -1,0 +1,26 @@
+.user-details-container {
+  height: 70vh;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+.logout-button {
+  background-color: #e50914;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+.label {
+  color: #94a3b8;
+  margin-right: 10px;
+}
+
+.membership-details {
+  display: flex;
+}
+.plan-details {
+  display: flex;
+}
+.logout-container {
+  text-align: center;
+}

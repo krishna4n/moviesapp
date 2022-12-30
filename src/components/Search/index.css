@@ -1,0 +1,24 @@
+.search-item-container {
+  padding-left: 12%;
+  padding-right: 12%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-container {
+  background-color: #181818;
+}
+.no-movie-image {
+  height: 378px;
+  width: 450px;
+}
+
+.no-video-container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}

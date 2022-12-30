@@ -8,7 +8,7 @@ const PopularMovieItem = props => {
     <li className="popular-item-container">
       <Link to={`/movies/${movie.id}`}>
         <img
-          src={movie.backdropPath}
+          src={movie.posterPath}
           alt={movie.title}
           className="popular-item-image"
         />

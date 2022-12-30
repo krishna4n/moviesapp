@@ -37,6 +37,7 @@ class Login extends Component {
     if (response.ok) {
       const jwtToken = data.jwt_token
       Cookie.set('jwt_token', jwtToken, {expires: 30})
+      Cookie.set('user_details', JSON.stringify(userDetails), {expires: 30})
       history.replace('/')
     } else {
       this.setState({
