@@ -199,10 +199,11 @@ class MovieItemDetails extends Component {
           className="movie-poster-container"
         >
           <Header />
-
           {this.renderingOptions()}
+          <div className="footer">
+            <Footer />
+          </div>
         </div>
-        <Footer />
       </div>
     )
   }
