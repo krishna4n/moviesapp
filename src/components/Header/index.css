@@ -4,9 +4,9 @@
   align-items: center;
   background-color: #131313;
   opacity: 80%;
-  padding: 30px;
   padding-left: 12%;
   padding-right: 12%;
+  font-family: HK Grotesk;
 }
 .website-logo {
   height: 30px;

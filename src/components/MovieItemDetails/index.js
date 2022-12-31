@@ -109,13 +109,13 @@ class MovieItemDetails extends Component {
     return (
       <div className="movie-details">
         <div className="movie-details-container">
-          <h1>{movieDetails.title}</h1>
+          <h1 className="movie-title">{movieDetails.title}</h1>
           <div className="movie-details-row-container">
             <p>{`${hours}h ${minutes}m`}</p>
             <p className="ua-container">{childRating}</p>
             <p>{releasedOn}</p>
           </div>
-          <p>{movieDetails.overview}</p>
+          <p className="movie-description">{movieDetails.overview}</p>
           <button type="button" className="movie-details-button">
             Play
           </button>
@@ -123,35 +123,35 @@ class MovieItemDetails extends Component {
         <ul className="details-container">
           <li className="genres-container">
             <ul className="genres-list">
-              <h4>Genres</h4>
+              <h4 className="sub-heading">Genres</h4>
               {movieDetails.genres.map(each => (
                 <li key={each.id}>
-                  <p>{each.name}</p>
+                  <p className="list-text">{each.name}</p>
                 </li>
               ))}
             </ul>
           </li>
           <li className="audio-available-container">
             <ul className="audio-available-list">
-              <h4>Audio Available</h4>
+              <h4 className="sub-heading">Audio Available</h4>
               {languages.map(each => (
                 <li key={each.id}>
-                  <p>{each.spokenLanguage}</p>
+                  <p className="list-text">{each.spokenLanguage}</p>
                 </li>
               ))}
             </ul>
           </li>
           <li className="rating-container">
-            <h4>Rating Count</h4>
-            <p>{movieDetails.voteAverage}</p>
-            <h4>Rating Average</h4>
-            <p>{movieDetails.voteCount}</p>
+            <h4 className="sub-heading">Rating Count</h4>
+            <p className="list-text">{movieDetails.voteAverage}</p>
+            <h4 className="sub-heading">Rating Average</h4>
+            <p className="list-text">{movieDetails.voteCount}</p>
           </li>
           <li className="budget-container">
-            <h4>Budget</h4>
-            <p>{movieDetails.budget}</p>
-            <h4>Release Date</h4>
-            <p>{movieDetails.releaseDate}</p>
+            <h4 className="sub-heading">Budget</h4>
+            <p className="list-text">{movieDetails.budget}</p>
+            <h4 className="sub-heading">Release Date</h4>
+            <p className="list-text">{movieDetails.releaseDate}</p>
           </li>
         </ul>
         <div className="more-like-this">
@@ -183,13 +183,14 @@ class MovieItemDetails extends Component {
   render() {
     const {movieDetails} = this.state
     const posterStyle =
-      movieDetails !== undefined ? movieDetails.backdropPath : ''
+      movieDetails !== undefined ? movieDetails.posterPath : ''
     console.log(posterStyle)
     return (
       <div className="movie-item-details-container">
         <div
           style={{
             backgroundImage: `url(${posterStyle})`,
+            height: '100%',
 
             width: '100%',
             backgroundRepeat: 'no-repeat',

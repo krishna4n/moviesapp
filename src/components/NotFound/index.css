@@ -1,5 +1,6 @@
 .not-found-container {
   height: 100vh;
+  font-family: HK Grotesk;
   background-image: url('https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672310442/MoviesApp/snow-removal-machine-working-high-ski-slope-snowstorm_454047-2149_1_2x_lw8gki.png');
   background-size: cover;
   display: flex;

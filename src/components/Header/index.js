@@ -49,13 +49,18 @@ const Header = props => {
             className="search-input"
             onKeyUp={changeSearchInput}
           />
-          <button type="button" className="search-button" testid="searchButton">
-            <HiOutlineSearch className="search-icon" onClick={onSearchButton} />
+          <button
+            type="button"
+            className="search-button"
+            testid="searchButton"
+            onClick={onSearchButton}
+          >
+            <HiOutlineSearch color="#ffffff" font-size="20px" />
           </button>
         </div>
         <div className={searchIcon}>
           <Link to="/search">
-            <HiOutlineSearch className="search-icon" />
+            <HiOutlineSearch color="#ffffff" font-size="20px" />
           </Link>
         </div>
         <Link to="/account">

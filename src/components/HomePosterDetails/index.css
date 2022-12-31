@@ -1,18 +1,26 @@
 .home-poster-details-container {
+  background-image: linear-gradient(to left bottom, transparent, #181818);
   height: 100%;
+  padding-bottom: 20px;
   padding-left: 12%;
+  padding-right: 12%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'HK Grotesk';
   color: #ffffff;
+  padding-bottom: 20px;
 }
 
 .home-poster-title {
-  font-style: solid;
+  font-family: HK Grotesk;
+  font-size: 38px;
+  font-weight: 600;
 }
 
 .home-poster-overview {
+  font-family: HK Grotesk;
+  font-size: 18px;
 }
 
 .home-poster-button {

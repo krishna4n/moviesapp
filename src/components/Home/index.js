@@ -25,7 +25,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.getApiData()
+    this.getTrendingData()
+    this.getOriginalsData()
   }
 
   getRandomPoster = () => {
@@ -38,10 +39,9 @@ class Home extends Component {
     })
   }
 
-  getApiData = async () => {
+  getTrendingData = async () => {
     const jwtToken = Cookie.get('jwt_token')
     const trendingApiUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
-    const originalsApiUrl = 'https://apis.ccbp.in/movies-app/originals'
     const options = {
       method: 'GET',
       headers: {Authorization: `Bearer ${jwtToken}`},
@@ -66,7 +66,15 @@ class Home extends Component {
         hasTendingList: this.apiStatus.failed,
       })
     }
+  }
 
+  getOriginalsData = async () => {
+    const jwtToken = Cookie.get('jwt_token')
+    const originalsApiUrl = 'https://apis.ccbp.in/movies-app/originals'
+    const options = {
+      method: 'GET',
+      headers: {Authorization: `Bearer ${jwtToken}`},
+    }
     const originalsResponse = await fetch(originalsApiUrl, options)
 
     if (originalsResponse.ok) {
@@ -104,7 +112,7 @@ class Home extends Component {
     return <HomePosterDetails posterDetails={randomPosterDetails} />
   }
 
-  renderingFailedView = () => (
+  renderingTrendingFailedView = () => (
     <div className="failed-view-container">
       <img
         src="https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672047384/MoviesApp/Pathalertimage_qtub0k.png"
@@ -114,7 +122,24 @@ class Home extends Component {
       <button
         type="button"
         className="failed-view-button"
-        onClick={this.getApiData}
+        onClick={this.getTrendingData}
+      >
+        Try Again
+      </button>
+    </div>
+  )
+
+  renderingOriginalsFailedView = () => (
+    <div className="failed-view-container">
+      <img
+        src="https://res.cloudinary.com/dk5lwv6ev/image/upload/v1672047384/MoviesApp/Pathalertimage_qtub0k.png"
+        alt="failure view"
+      />
+      <p>Something went wrong. Please try again</p>
+      <button
+        type="button"
+        className="failed-view-button"
+        onClick={this.getOriginalsData}
       >
         Try Again
       </button>
@@ -129,7 +154,7 @@ class Home extends Component {
       case this.apiStatus.success:
         return this.renderingHomePosterDetailsView()
       case this.apiStatus.failed:
-        return this.renderingFailedView()
+        return this.renderingOriginalsFailedView()
       default:
         return ''
     }
@@ -155,7 +180,7 @@ class Home extends Component {
       case this.apiStatus.success:
         return this.renderingTrendingNowView()
       case this.apiStatus.failed:
-        return this.renderingFailedView()
+        return this.renderingTrendingFailedView()
       default:
         return ''
     }
@@ -169,7 +194,7 @@ class Home extends Component {
       case this.apiStatus.success:
         return this.renderingOriginalsView()
       case this.apiStatus.failed:
-        return this.renderingFailedView()
+        return this.renderingOriginalsFailedView()
       default:
         return ''
     }
@@ -192,7 +217,7 @@ class Home extends Component {
         <div
           style={{
             backgroundImage: `url(${posterStyle})`,
-
+            height: '55%',
             width: '100%',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',

@@ -1,11 +1,11 @@
 .home-poster-container {
-  height: 52vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .home-container {
   background-image: linear-gradient(to bottom, #181818, #000000);
   height: 100vh;
+  font-family: HK Grotesk;
 }
 
 .loader-container {
@@ -15,11 +15,13 @@
 }
 
 .trending-now-container {
+  padding-top: 10px;
   padding-left: 12%;
   padding-right: 12%;
   background-color: #000000;
 }
 .originals-container {
+  padding-top: 10px;
   padding-left: 12%;
   padding-right: 12%;
   background-color: #000000;

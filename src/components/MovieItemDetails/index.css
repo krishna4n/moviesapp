@@ -1,19 +1,14 @@
 .movie-item-details-container {
-  background-color: #181818;
 }
 
 .movie-poster-container {
-  height: 52vh;
-  height: 150%;
-
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #ffffff;
 }
 .movie-details-container {
-  padding-top: 10%;
   padding-left: 12%;
   padding-right: 12%;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .ua-container {
@@ -24,7 +19,13 @@
   font-size: 10px;
 }
 
+.movie-details {
+  font-family: HK Grotesk;
+  background-image: linear-gradient(to left bottom, transparent, #181818);
+}
+
 .movie-details-row-container {
+  margin-top: -10px;
   display: flex;
   align-items: center;
 }
@@ -40,8 +41,9 @@
   border-radius: 5px;
 }
 .details-container {
+  background-image: linear-gradient(to left bottom, #18181818, #181818);
+  margin-top: -5px;
   list-style-type: none;
-  background: #181818;
   padding-left: 12%;
   padding-right: 12%;
   width: 100%;
@@ -65,6 +67,8 @@
 }
 .more-like-this-heading {
   margin-top: -20px;
+  font-size: 24px;
+  font-family: HK Grotesk;
 }
 
 .more-like-this {
@@ -72,4 +76,22 @@
   padding-left: 12%;
   padding-right: 12%;
   background-color: #181818;
+}
+.sub-heading {
+  font-family: HK Grotesk;
+  font-size: 16px;
+  color: #94a3b8;
+}
+.list-text {
+  font-family: HK Grotesk;
+  font-size: 14px;
+}
+.movie-title {
+  font-size: 48px;
+  font-weight: 600px;
+  font-family: HK Grotesk;
+}
+.movie-description {
+  font-family: HK Grotesks;
+  font-size: 22px;
 }

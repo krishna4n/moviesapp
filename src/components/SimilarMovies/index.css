@@ -1,6 +1,7 @@
 .similar-movie-image {
-  width: 310px;
-  border-radius: 5px;
+  width: 255px;
+  height: 170px;
+  border-radius: 8px;
 }
 .similar-item-container {
   margin: 10px;

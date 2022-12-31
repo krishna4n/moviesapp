@@ -7,26 +7,28 @@ import './App.css'
 import Popular from './components/Popular'
 import MovieItemDetails from './components/MovieItemDetails'
 import Search from './components/Search'
-import SearchContext from './components/Context/SearchContext'
 import NotFound from './components/NotFound'
 import Account from './components/Account'
+import LoginContext from './components/Context/LoginContext'
 
 class App extends Component {
-  state = {searchInput: ''}
+  state = {userName: '', passWord: ''}
 
-  changeInput = val => {
+  updateCredentials = (user, pass) => {
     this.setState({
-      searchInput: val,
+      userName: user,
+      passWord: pass,
     })
   }
 
   render() {
-    const {searchInput} = this.state
+    const {userName, passWord} = this.state
     return (
-      <SearchContext.Provider
+      <LoginContext.Provider
         value={{
-          searchInput,
-          changeInput: this.changeInput,
+          userName,
+          passWord,
+          updateCredentials: this.updateCredentials,
         }}
       >
         <Switch>
@@ -44,7 +46,7 @@ class App extends Component {
           <Route path="/bad-path" component={NotFound} />
           <Redirect to="/bad-path" />
         </Switch>
-      </SearchContext.Provider>
+      </LoginContext.Provider>
     )
   }
 }

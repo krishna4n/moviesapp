@@ -2,7 +2,7 @@ import './index.css'
 
 const HomePosterDetails = props => {
   const {posterDetails} = props
-  const {backdropPath, id, overview, posterPath, title} = posterDetails
+  const {overview, title} = posterDetails
   console.log(posterDetails)
   return (
     <div className="home-poster-details-container">
